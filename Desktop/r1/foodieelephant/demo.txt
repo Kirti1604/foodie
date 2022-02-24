@@ -1,0 +1,69 @@
+from app.js file
+import logo from './logo.svg';
+<header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+
+
+      from app.css
+.App-header {
+  background-color: #000000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+from index.js
+import reportWebVitals from './reportWebVitals';
+reportWebVitals();
+
+from index.css
+ background: linear-gradient(#159957,#155799);
+
+
+recipeitem.js
+import React from "react";
+const Recipeitem = (props) => {
+    const { label, image, ingredientLines} = props;
+    return( 
+                 <div class="col-md-3 my-2">
+                    <div class= "card py-2 text-center">
+                        <img src={image} class="img-fluid w-50 mx-auto rounded-circle"/> 
+                        <div class= "card-body"> 
+                        <h5>{label}</h5>
+                        </div>
+                        <table>
+                            <thead>
+                            <th>Ingredient</th>
+                            </thead>
+                            <tbody>
+                            {ingredientLines.map((ingredient, index) => (
+                                <tr key={index} className="list-group-item">
+                                <td>{ingredient}</td>
+                
+                                </tr>
+                            ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            )
+            }
+             
+
+export default  Recipeitem;
+ 
